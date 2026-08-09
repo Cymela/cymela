@@ -1,0 +1,22 @@
+# This repository holds documentation and the issue tracker only — no source.
+# These entries exist so that nothing from a local working copy of the
+# application can be committed here by accident.
+
+src/
+dist/
+tests/
+scripts/
+node_modules/
+package.json
+package-lock.json
+tsconfig.json
+*.tgz
+
+.cymela/
+.env
+.env.*
+*.key
+.npmrc
+
+.DS_Store
+Thumbs.db

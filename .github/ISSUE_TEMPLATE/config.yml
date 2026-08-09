@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/Cymela/cymela/blob/main/SECURITY.md
+    about: Do not open a public issue. Report privately — see SECURITY.md.
+  - name: Documentation and downloads
+    url: https://cymela.com
+    about: Install instructions, terms and privacy policy.
+  - name: Question or general help
+    url: https://cymela.com
+    about: Use the contact links on the website rather than the issue tracker.

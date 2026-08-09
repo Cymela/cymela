@@ -1,0 +1,98 @@
+name: Bug report
+description: Something in Cymela behaves incorrectly.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. The version, OS and terminal fields matter more
+        than they look — most Cymela bugs are terminal- or platform-specific.
+
+        **Do not paste API keys.** If you include a transcript or log, remove
+        keys and any code you are not free to share.
+
+  - type: input
+    id: version
+    attributes:
+      label: Cymela version
+      description: Output of `cymela --version`.
+      placeholder: "0.1.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - WSL (Windows Subsystem for Linux)
+    validations:
+      required: true
+
+  - type: input
+    id: terminal
+    attributes:
+      label: Terminal
+      description: Which terminal emulator, and its version if you know it.
+      placeholder: "Windows Terminal 1.20 / iTerm2 3.5 / GNOME Terminal 3.50"
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      description: Output of `node --version`.
+      placeholder: "v20.11.0"
+    validations:
+      required: true
+
+  - type: input
+    id: provider
+    attributes:
+      label: Provider and model
+      description: Which provider and model you were using. Never include the key.
+      placeholder: "DeepSeek / deepseek-chat"
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you did, in order. A reproduction that fails on a fresh install is the most useful thing you can give us.
+      placeholder: |
+        1. Run `cymela` in an empty folder
+        2. Type ...
+        3. Press ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshots, error output, or a note on how often it happens. Drag images straight in.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Before submitting
+      options:
+        - label: I reproduced this on the latest version of Cymela.
+          required: true
+        - label: This report contains no API keys, tokens or other secrets.
+          required: true

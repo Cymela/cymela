@@ -1,0 +1,174 @@
+Cymela CLI — Software License
+Copyright (c) 2026 Cymela, Republic of Serbia.
+All rights reserved.
+
+THIS IS A PROPRIETARY LICENSE. IT IS NOT AN OPEN-SOURCE LICENSE.
+
+It permits you to install and use the Cymela CLI, including for commercial
+work, at no cost. It does not permit you to redistribute it, sell it, or
+publish modified versions of it. If that is what you need, ask.
+
+This license accompanies the Cymela Terms of Use ("the Terms"), published
+at https://cymela.com/terms.html. Where the Terms refer to a LICENSE file
+distributed with a component of the Services, this is that file. It is written
+to be consistent with Section 05 of the Terms, not to displace it.
+
+
+1. GRANT
+
+Subject to your compliance with this license and with the Terms, the copyright
+holder grants you a personal, worldwide, royalty-free, non-exclusive,
+revocable license to install and use the Cymela CLI for any lawful purpose,
+including commercial work.
+
+You may install it on as many machines as you personally use or control, and
+you may use it on private, confidential or commercial codebases. Nothing you
+create with it belongs to the copyright holder: your code, your prompts and
+your output are yours, and no part of them is transmitted to the copyright
+holder in the course of ordinary use.
+
+
+2. WHAT THIS LICENSE DOES NOT GRANT
+
+Except as stated in Section 1, no rights are granted. In particular, you may
+not, without prior written permission:
+
+  (a) distribute, publish, sublicense, rent, lease, lend, sell or otherwise
+      make the software available to third parties, whether modified or not,
+      and whether for a fee or not;
+
+  (b) publish or distribute a modified version, a fork, or a derivative work;
+
+  (c) incorporate the software, or a substantial part of it, into another
+      product or service that you distribute;
+
+  (d) remove, obscure or alter any copyright, license or attribution notice;
+
+  (e) represent any modified build as an official Cymela release, or use the
+      Cymela name or logo in a way that suggests endorsement or affiliation;
+
+  (f) copy or reuse the software's source code, its structure and organization,
+      its user-interface layout, its visual design, its prompt text or its
+      written content in any other product or service, whether or not that
+      product competes with the Cymela CLI, and whether or not the copied
+      material is reproduced verbatim;
+
+  (g) offer the software, or any product substantially derived from it, to
+      third parties as a hosted, managed or software-as-a-service offering; or
+
+  (h) reverse engineer, decompile or disassemble the software, except to the
+      extent this restriction cannot lawfully be excluded (see below).
+
+Modifying your own installation for your own use is permitted. Publishing the
+result is what is not.
+
+Nothing in this section restricts any right you hold under mandatory law that
+cannot be excluded by agreement. For users in the European Union in particular,
+nothing here restricts the rights granted by Articles 5 and 6 of Directive
+2009/24/EC on the legal protection of computer programs, including observing or
+studying the program to determine its underlying ideas, and decompilation for
+interoperability purposes. Copyright protects the expression of this software,
+not the ideas or functionality behind it.
+
+
+3. CONDITIONS OF USE
+
+This license is conditional on your compliance with the acceptable-use terms
+in Section 06 of the Terms. In summary, and without limiting them, you must
+not use the software to break the law, to harm people, or in violation of the
+terms of the model provider whose API you connect it to.
+
+You must not rely on the software, without qualified human review, where an
+error could cause death, personal injury, or severe environmental, financial
+or infrastructural damage. It is a developer productivity tool. It is not
+certified, validated or fit for safety-critical use of any kind.
+
+You are responsible for reviewing what the agent proposes before you approve
+it, and for everything you produce with it.
+
+
+4. THIRD-PARTY COMPONENTS
+
+The Cymela CLI depends on third-party open-source packages, which are
+installed from their own sources and are not covered by this license. Each
+remains subject to the license its authors published it under, and those
+licenses govern your rights in those components. This license applies only to
+the Cymela CLI itself.
+
+Language models are not part of the software. The CLI is a client for a model
+you choose and pay for, reached with an API key belonging to you. The model
+provider's terms govern that relationship, not this license.
+
+
+5. TRADEMARKS
+
+The Cymela name, logo and visual identity are not licensed to you. Section 1
+is a license to use the software; it is not a grant of the brand.
+
+
+6. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY
+KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY. TO THE FULLEST EXTENT PERMITTED
+BY APPLICABLE LAW, ALL IMPLIED WARRANTIES ARE DISCLAIMED, INCLUDING ANY
+IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE,
+ACCURACY AND NON-INFRINGEMENT.
+
+There is no warranty that the software will be uninterrupted, secure or
+error-free, that defects will be corrected, or that any output will be
+accurate, complete, safe or reliable. You use it at your own risk, and you are
+solely responsible for any damage to your system, loss of data, or loss of
+work that results.
+
+
+7. LIMITATION OF LIABILITY
+
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER WILL
+NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY
+OR PUNITIVE DAMAGES, NOR FOR ANY LOSS OF PROFITS, REVENUE, BUSINESS, GOODWILL,
+DATA OR WORK PRODUCT, ARISING OUT OF OR RELATING TO YOUR USE OF OR INABILITY
+TO USE THE SOFTWARE — WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE),
+STRICT LIABILITY OR OTHERWISE, AND WHETHER OR NOT THE POSSIBILITY OF SUCH
+DAMAGES WAS KNOWN.
+
+This expressly includes loss or damage arising from code the agent generated,
+modified, deleted or executed; from output produced by a third-party model;
+from the act or omission of any third-party provider; or from another person's
+misuse of the software.
+
+Total aggregate liability will not exceed the greater of (a) the amount you
+have paid the copyright holder for the software in the twelve months preceding
+the claim, which for free software is zero, or (b) EUR 100.
+
+Nothing here excludes or limits liability for death or personal injury caused
+by negligence, for fraud or fraudulent misrepresentation, or for anything else
+that cannot lawfully be excluded. If you are a consumer, you keep every
+mandatory right your local consumer-protection law gives you.
+
+
+8. TERMINATION
+
+This license ends automatically and immediately if you breach it or the Terms.
+On termination you must stop using the software and delete your copies.
+Continuing to use it after termination is unlicensed use of a copyrighted
+work. Sections 2 and 5 to 10 survive termination.
+
+
+9. GOVERNING LAW
+
+This license is governed by the laws of the Republic of Serbia, without regard
+to its conflict-of-laws rules, and the courts of the Republic of Serbia have
+exclusive jurisdiction. If you use the software as a consumer resident in the
+European Union, the United Kingdom, or another jurisdiction whose law gives
+you a mandatory right to your local courts, this does not deprive you of it.
+
+
+10. RELATIONSHIP TO THE TERMS
+
+This license and the Terms are intended to be read together. Where they
+genuinely conflict on the scope of the license granted in Section 1, this file
+prevails, as Section 05 of the Terms provides. On every other subject the
+Terms apply in full.
+
+
+Questions, permissions and licensing enquiries: contact@cymela.com

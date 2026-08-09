@@ -1,0 +1,34 @@
+name: Feature idea
+description: Suggest something Cymela should do.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome. There is no roadmap promise — but they are read, and
+        the ones that describe a real problem tend to win over the ones that
+        describe a solution.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the situation you hit, not the feature you want. What were you doing when Cymela got in the way?
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like Cymela to do?
+      description: Your proposed behaviour, if you have one in mind.
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: How do you handle it today?
+      description: Whatever you do instead right now, including "nothing, I gave up".
+    validations:
+      required: false
