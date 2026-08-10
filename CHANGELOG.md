@@ -3,6 +3,19 @@
 Cymela ships as a compiled bundle on npm. This file records what changed in
 each published version.
 
+## 0.1.3
+
+- **Fixed: plain Enter did not submit the prompt.** A heuristic in the
+  terminal input library flagged every Enter as Shift+Enter, so the composer
+  inserted a newline instead of sending — in every terminal, on every
+  platform. Versions 0.1.0–0.1.2 are all affected; if you installed one of
+  them, update. The fix is covered by a new test harness that drives the real
+  TUI with no pseudo-terminal in the middle, so this class of bug can no
+  longer hide from CI.
+- The provider list now always opens with the cursor on the first entry; the
+  previously used provider keeps its "last used" tag but no longer pre-claims
+  the cursor.
+
 ## 0.1.2
 
 - Removed the post-install greeting. npm discards lifecycle-script output, so
