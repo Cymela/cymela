@@ -8,9 +8,6 @@ talks to whichever model you point it at — you bring the provider and the API 
 runs underneath. Cymela's own model research carries the Hyper name as well, but
 that work does not power the CLI today.
 
-It reads, edits and runs code on your machine, and it talks to whichever model
-you point it at — you bring the provider and the API key.
-
 ```bash
 npm install -g cymela
 ```
