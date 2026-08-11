@@ -1,6 +1,12 @@
 # Cymela
 
-A terminal coding agent. Cymela is the wrapper; **Hyper** is the engine behind it.
+A terminal coding agent. It reads, edits and runs code on your machine, and it
+talks to whichever model you point it at — you bring the provider and the API key.
+
+**Hyper** is the default persona it runs as: a tone and style preset, alongside
+`mentor`, `security` and `rubber-duck`. It shapes how the agent writes, not what
+runs underneath. Cymela's own model research carries the Hyper name as well, but
+that work does not power the CLI today.
 
 It reads, edits and runs code on your machine, and it talks to whichever model
 you point it at — you bring the provider and the API key.
