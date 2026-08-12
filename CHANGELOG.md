@@ -3,6 +3,20 @@
 Cymela ships as a compiled bundle on npm. This file records what changed in
 each published version.
 
+## 0.1.4
+
+- **Fixed: the screen could freeze during long thinking streams** (Ctrl+T
+  live thoughts) on slow terminal hosts — most visibly a maximized classic
+  Windows console. A bottom-pinned transcript shifts every row on each
+  streamed chunk, and the renderer was rewriting the whole screen ~5×/second
+  (measured at 80–120 KB/s on a 100-row window). It now emits one scroll and
+  paints only the new rows — a ~10× reduction — and when a terminal still
+  falls behind, stale intermediate frames are skipped so it always shows the
+  newest one instead of replaying the backlog.
+- README: corrected the description of **Hyper** — it is Cymela's default
+  persona (a tone and style preset), not the engine. The CLI runs on whichever
+  model provider you configure.
+
 ## 0.1.3
 
 - **Fixed: plain Enter did not submit the prompt.** A heuristic in the
