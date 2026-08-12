@@ -5,6 +5,13 @@ each published version.
 
 ## 0.1.4
 
+- **Fixed: shell commands containing double quotes ran mangled on Windows.**
+  The spawn layer re-quoted them with an escape style cmd.exe does not parse,
+  so `powershell -Command "…"` printed its own command text instead of
+  executing it (silently dropping `$_` on the way), and a quoted URL reached
+  curl broken ("URL rejected"). Commands are now handed to cmd verbatim,
+  exactly as typed. Both the pty and pipe backends were affected, on every
+  Windows machine.
 - **Fixed: the screen could freeze during long thinking streams** (Ctrl+T
   live thoughts) on slow terminal hosts — most visibly a maximized classic
   Windows console. A bottom-pinned transcript shifts every row on each
