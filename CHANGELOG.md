@@ -1,7 +1,81 @@
 # Changelog
 
-Cymela ships as a compiled bundle on npm. This file records what changed in
-each published version.
+Monarch CLI ships as a compiled bundle on npm. This file records what changed
+in each published version. Versions up to 0.1.5 were published as `cymela`.
+
+## 2.0.0
+
+The CLI formerly published as `cymela` is now **Monarch CLI**. Both
+`npm install -g monarchai` and `npm install -g cymela` install it, and the
+command is `monarch` either way.
+
+This is a rebuild rather than an increment, which is why the number jumps.
+
+### Upgrading
+
+- **`npm install -g cymela` replaces the old install** and keeps the `cymela`
+  command working, now pointing at the current build.
+- **Your settings move with you.** Provider, per-provider API keys, model
+  choices, theme and custom personas are carried from `~/.cymela` to
+  `~/.monarch` on first run, once. Custom personas keep their machine signing
+  key, so they still verify rather than being dropped. Conversations were
+  already stored per project and are read where they are.
+- **If both npm names end up installed**, `monarch --doctor` reports it and
+  gives you the one line that clears it up.
+
+### New
+
+- **Sub-agents with roles.** Scout (read-only), Builder and Checker run under
+  the lead agent with their own tool limits, streamed live into `/agents`.
+- **Cross-session messaging.** Two sessions running on the same machine can
+  send each other messages, including across different projects. Delivery is to
+  a running session; if the other side is not running, the send fails and says
+  so rather than queuing. The agent sends these itself once you have asked it
+  to keep another session posted, including turns later without being asked
+  again.
+
+  Delivery is local: the message is a file in your own config directory, and
+  no server or network is involved in moving it. What happens next is not
+  local. The receiving session reads the message into its context, and that
+  context goes to whichever model provider *that* session is configured with,
+  the same as everything else it reads. So a message you send to another
+  session reaches that session's provider. If the two sessions are pointed at
+  different providers, it reaches the other one.
+- **Memory across sessions.** Durable facts you ask it to keep, stored only on
+  your machine. `/memory` shows everything, `/memory off` stops it collecting.
+- **Scriptable.** `monarch -p "…"` runs one turn with no UI, and now reads
+  piped input, so `git diff | monarch -p "review this"` works.
+- **Project awareness.** Each session starts already knowing the project, its
+  language, the branch, whether the tree is dirty and how the project is tested,
+  instead of spending its first few calls finding out.
+- **Two more providers**, bringing it to thirteen: NVIDIA NIM and Microsoft
+  Foundry (Azure).
+- **`monarch --doctor`** checks Node, terminal, provider, key, key-file
+  permissions, config writability and store integrity, and every failure comes
+  with the command that fixes it.
+
+### Changed
+
+- **`/execute`, `/agent` and `/override` are retired** in favour of
+  `/run-plan`, `/default` and `/auto`. Typing an old one tells you its
+  replacement. `/mode` covers all three from one command.
+- **Project instructions are `MONARCH.md`.** `CYMELA.md` and `HYPER.md` are
+  still read.
+- **Environment variables are `MONARCH_*`.** `CYMELA_*` and `HYPER_*` still
+  work.
+- **Config lives in `~/.monarch`.** `~/.cymela` is still read.
+
+### Platform
+
+2.0.0 was developed and tested on Linux, which is a change from 0.1.x. It is
+written to be portable and the platform-specific paths are covered by tests,
+but it has not had real hours on Windows or macOS yet. Reports from either are
+genuinely useful — run `monarch --doctor` first and include its output.
+
+### Requires
+
+Node.js 20 or newer. Nothing is compiled on install and there are no runtime
+dependencies.
 
 ## 0.1.4
 

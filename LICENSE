@@ -1,15 +1,15 @@
-Cymela CLI — Software License
+Monarch CLI — Software License
 Copyright (c) 2026 Cymela, Republic of Serbia.
 All rights reserved.
 
 THIS IS A PROPRIETARY LICENSE. IT IS NOT AN OPEN-SOURCE LICENSE.
 
-It permits you to install and use the Cymela CLI, including for commercial
+It permits you to install and use the Monarch CLI, including for commercial
 work, at no cost. It does not permit you to redistribute it, sell it, or
 publish modified versions of it. If that is what you need, ask.
 
 This license accompanies the Cymela Terms of Use ("the Terms"), published
-at https://cymela.com/terms.html. Where the Terms refer to a LICENSE file
+at https://cymela.com/terms. Where the Terms refer to a LICENSE file
 distributed with a component of the Services, this is that file. It is written
 to be consistent with Section 05 of the Terms, not to displace it.
 
@@ -18,7 +18,7 @@ to be consistent with Section 05 of the Terms, not to displace it.
 
 Subject to your compliance with this license and with the Terms, the copyright
 holder grants you a personal, worldwide, royalty-free, non-exclusive,
-revocable license to install and use the Cymela CLI for any lawful purpose,
+revocable license to install and use the Monarch CLI for any lawful purpose,
 including commercial work.
 
 You may install it on as many machines as you personally use or control, and
@@ -44,13 +44,14 @@ not, without prior written permission:
 
   (d) remove, obscure or alter any copyright, license or attribution notice;
 
-  (e) represent any modified build as an official Cymela release, or use the
-      Cymela name or logo in a way that suggests endorsement or affiliation;
+  (e) represent any modified build as an official Cymela or Monarch CLI
+      release, or use the Cymela name, the Monarch CLI name, or either logo
+      in a way that suggests endorsement or affiliation;
 
   (f) copy or reuse the software's source code, its structure and organization,
       its user-interface layout, its visual design, its prompt text or its
       written content in any other product or service, whether or not that
-      product competes with the Cymela CLI, and whether or not the copied
+      product competes with the Monarch CLI, and whether or not the copied
       material is reproduced verbatim;
 
   (g) offer the software, or any product substantially derived from it, to
@@ -89,11 +90,11 @@ it, and for everything you produce with it.
 
 4. THIRD-PARTY COMPONENTS
 
-The Cymela CLI depends on third-party open-source packages, which are
+The Monarch CLI depends on third-party open-source packages, which are
 installed from their own sources and are not covered by this license. Each
 remains subject to the license its authors published it under, and those
 licenses govern your rights in those components. This license applies only to
-the Cymela CLI itself.
+the Monarch CLI itself.
 
 Language models are not part of the software. The CLI is a client for a model
 you choose and pay for, reached with an API key belonging to you. The model
@@ -102,8 +103,10 @@ provider's terms govern that relationship, not this license.
 
 5. TRADEMARKS
 
-The Cymela name, logo and visual identity are not licensed to you. Section 1
-is a license to use the software; it is not a grant of the brand.
+The Cymela name, the Monarch CLI name, and the logos and visual identity of
+either are not licensed to you. Nothing here claims the ordinary word
+"monarch" outside its use as the name of this software. Section 1 is a license
+to use the software; it is not a grant of the brand.
 
 
 6. NO WARRANTY
