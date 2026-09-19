@@ -3,6 +3,26 @@
 Monarch CLI ships as a compiled bundle on npm. This file records what changed
 in each published version. Versions up to 0.1.5 were published as `cymela`.
 
+## 2.0.1
+
+Two fixes, no new behaviour.
+
+### Fixed
+
+- **A hook that times out no longer leaves its work running.** Hooks run
+  through a shell, and on a timeout only the shell was being signalled, so
+  anything the hook had started kept going without it. A `PreToolUse` hook runs
+  on every tool call, so a hook that hung left one more process behind each
+  time, for as long as the session lasted. The timeout now takes down the whole
+  process group.
+- **The agent is told where a session message actually goes.** Sending to
+  another session is a local file, and 2.0.0 said so. But the receiving session
+  reads the message into its context, and that context goes to whichever
+  provider *that* session is configured with. The model doing the sending is
+  the only one positioned to judge what belongs in a message, and it was not
+  being told this. It is now, along with an instruction never to send a key, a
+  token or a credential.
+
 ## 2.0.0
 
 The CLI formerly published as `cymela` is now **Monarch CLI**. Both
