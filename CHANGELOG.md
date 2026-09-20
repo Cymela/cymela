@@ -3,6 +3,32 @@
 Monarch CLI ships as a compiled bundle on npm. This file records what changed
 in each published version. Versions up to 0.1.5 were published as `cymela`.
 
+## 2.0.2
+
+Two OpenRouter changes: one fix, and one new behaviour that is disclosed here
+rather than slipped in.
+
+### Fixed
+
+- **OpenRouter works again on every effort tier.** Requests asked for
+  reasoning with both an effort level and a token budget, which OpenRouter
+  accepts one of but not both. Every tier above `low`, including the default,
+  was rejected with a 400 before a single token came back. This was present in
+  2.0.0 and 2.0.1. The request now sends the effort tier alone and lets
+  OpenRouter translate it for whichever model is behind it. `/effort low` was
+  the only setting that worked; it no longer needs to be.
+
+### Changed
+
+- **Requests to OpenRouter now identify the app as Monarch CLI.** Three
+  headers: the app's page (`https://cymela.com/cli`), its name, and the
+  category `cli-agent`. This is what gives the app a page on OpenRouter with
+  per-model usage analytics and makes it eligible for OpenRouter's public app
+  rankings. The headers go to OpenRouter only, carry a name and a URL and
+  nothing about you, and nothing is sent to Cymela. It does mean your
+  OpenRouter usage through this tool counts toward the app's public numbers.
+  "Runs entirely on your machine" is unchanged.
+
 ## 2.0.1
 
 Two fixes, no new behaviour.
