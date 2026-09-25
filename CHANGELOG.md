@@ -3,6 +3,71 @@
 Monarch CLI ships as a compiled bundle on npm. This file records what changed
 in each published version. Versions up to 0.1.5 were published as `cymela`.
 
+## 2.0.3
+
+Mostly about what each request costs and whether it succeeds at all, plus a
+chameleon that moves.
+
+### Fixed
+
+- **The chameleon moves while you can see it.** Since 2.0.0 it only moved when
+  something else redrew the screen, so it sat still unless you were typing or a
+  reply was streaming. It now animates whenever it is on screen, and stops when
+  you scroll it out of view.
+- **Requests stay cacheable for the whole conversation.** The short description
+  of your repository in the system prompt was taken again every turn. After the
+  model edited a file its change count moved, and every provider that caches by
+  prefix (DeepSeek, OpenAI, Anthropic, Gemini) billed the rest of the
+  conversation at the full price on the next request. It is now taken once per
+  conversation. Measured after an edit: the next request went from 61% to
+  99.9% cacheable.
+- **Claude through the Anthropic provider.** The default model was
+  `claude-sonnet-5-20260630`, which is not an id Anthropic serves; it is now
+  `claude-sonnet-5`, and the old id is corrected if you have it saved. Current
+  Claude models (Sonnet 5, Opus 5 and 5.5, Opus 4.7 and 4.8, Fable) were sent a
+  thinking setting they reject, so each request failed once and was retried
+  without thinking, and `/effort` never reached them. They now get adaptive
+  thinking at the effort you chose. Requests also ask Anthropic to cache the
+  prompt, which makes cached input a tenth of the price, and on Opus 5.5 and
+  Fable 5.1 they ask for outdated thinking to be dropped rather than refused,
+  so switching mode or compacting mid-conversation no longer fails the next
+  request on newer Anthropic accounts.
+- **DeepSeek effort levels reach DeepSeek.** `/effort low` used to think as
+  hard as the default, and `max` never asked for DeepSeek's own maximum. Both
+  now send DeepSeek's `reasoning_effort`.
+- **`/compact` compacts.** On million-token models it answered "nothing worth
+  compacting" even at 170k tokens. Manual compaction now works from 80k, and
+  when it does decline, pressing C within ten seconds compacts anyway.
+- **Math prints as readable text.** LaTeX in replies, such as `\frac{a}{b}` or
+  `x^{2}`, is shown as a/b and x² instead of raw backslashes.
+- **A clean repository reads clean.** Monarch's own `.monarch/` folder was
+  counted as an uncommitted change, so every checkout showed "1 file changed"
+  after the first launch.
+- **A model with a smaller output limit no longer fails at max effort.**
+  Claude Haiku 4.5 stops at 64,000 output tokens and the max tier asked for
+  65,536. The limit is now read from the provider's refusal and the request is
+  sent again within it.
+
+### Changed
+
+- **DeepSeek defaults to `deepseek-flash`**, DeepSeek's current model, which
+  can see images. Images you attach now go straight to it; before, a DeepSeek
+  model was only told where the file was saved. The unused remains of 0.1.5's
+  route for having a second model describe an image are removed, including the
+  `CYMELA_VISION_API_KEY` name.
+- **The model is told today's date and what kind of machine it is on**, so
+  searches use the current year and a Linux machine is not handed Windows
+  commands. What is sent to your provider: the date, the operating system and
+  its version, processor architecture, core count, memory and Node version.
+  No hostname, username or home folder.
+- **`AGENTS.md` is read** when a project has no `MONARCH.md` (or `CYMELA.md`,
+  `HYPER.md`), so a repository set up for Codex, Gemini CLI, Cursor, Copilot or
+  Claude Code works here without a second file.
+- **Claude models through OpenRouter are asked to cache the prompt**, the same
+  as on Anthropic's own API.
+- **Cost estimates use current prices** for DeepSeek and Claude. They are still
+  estimates at list price: cache discounts are not counted yet.
+
 ## 2.0.2
 
 Two OpenRouter changes: one fix, and one new behaviour that is disclosed here

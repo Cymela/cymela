@@ -172,6 +172,7 @@ Auto — a script has not decided to stop being asked, a person has.
 | `<project>/.monarch/settings.local.json` | Per-project personality, deny rules, hooks |
 | `<project>/.monarch/attachments/` | Copies of files you attach |
 | `MONARCH.md` | Project instructions loaded every turn |
+| `AGENTS.md` | Read instead when a project has no `MONARCH.md` |
 
 The older `~/.cymela` and `CYMELA.md` spellings are still read, and `CYMELA_*`
 environment variables still work alongside `MONARCH_*`.
